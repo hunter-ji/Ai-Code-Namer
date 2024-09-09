@@ -12,7 +12,7 @@ export function StyleDropdown(props: { onStyleChange: (newValue: string) => void
       }}
     >
       <List.Dropdown.Section title="Styles">
-        {Object.entries(NamingStyle).map(([k, v]) => (
+        {Object.entries(NamingStyle).map(([, v]) => (
           <List.Dropdown.Item key={v} title={v} value={v} />
         ))}
       </List.Dropdown.Section>

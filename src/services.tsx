@@ -13,7 +13,6 @@ export function UseNameGenerator({ codeElementType }: NameHandlerProps) {
   }
 
   const [searchText, setSearchText] = useState("");
-  const [elementType, setElementType] = useState<CodeElementType>(codeElementType);
   const [isLoading, setIsLoading] = useState(false);
   const [generatedNames, setGeneratedNames] = useState<string[]>([]);
   const [namingStyle, setNamingStyle] = useState<NamingStyle>(NamingStyle.CamelCase);
@@ -33,7 +32,7 @@ export function UseNameGenerator({ codeElementType }: NameHandlerProps) {
 
     try {
       const names = await generateNameSuggestions(
-        elementType,
+        codeElementType,
         searchText,
         isEmptyVal ? namingStyle : newNamingStyle || namingStyle,
       );
